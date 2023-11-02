@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">elementcraft</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="okay">Okay</string>
 </resources>

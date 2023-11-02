@@ -13,4 +13,22 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="sectionHeadings">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/secondaryTextColor</item> <!--#79758D-->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonPrimaryText">
+        <item name="android:textColor">@color/buttonPrimaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingHorizontal">10dp</item>
+        <item name="android:paddingVertical">5dp</item>
+    </style>
+
+    <style name="buttonPrimary">
+        <item name="cardBackgroundColor">@color/cardBackgroundColor</item>
+        <item name="cardCornerRadius">5dp</item>
+    </style>
 </resources>
