@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">elementcraft</string>
-    <string name="done">Done</string>
-    <string name="cancel">Cancel</string>
-    <string name="ok">Ok</string>
-    <string name="okay">Okay</string>
+    <string name="done">DONE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="ok">OK</string>
+    <string name="okay">OKAY</string>
+    <string name="confirm">CONFIRM</string>
 </resources>

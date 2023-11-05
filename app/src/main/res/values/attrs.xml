@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <attr name="text" format="string"/>
+
+    <declare-styleable name="confirm_button">
+        <attr name="text"/>
+    </declare-styleable>
+
+    <declare-styleable name="cancel_button">
+        <attr name="text"/>
+    </declare-styleable>
+
+    <declare-styleable name="section_divider">
+        <attr name="text"/>
+    </declare-styleable>
+
+    <declare-styleable name="edittext">
+        <attr name="text"/>
+        <attr name="hint" format="string"/>
+    </declare-styleable>
+</resources>
