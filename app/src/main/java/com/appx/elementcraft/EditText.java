@@ -31,6 +31,7 @@ public class EditText extends LinearLayout
 
         if(hint != null)
             setHint(hint);
+        a.recycle();
     }
 
     public void init(Context context)

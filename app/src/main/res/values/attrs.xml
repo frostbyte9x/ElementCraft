@@ -19,4 +19,8 @@
         <attr name="text"/>
         <attr name="hint" format="string"/>
     </declare-styleable>
+    
+    <declare-styleable name="section_heading">
+        <attr name="text"/>
+    </declare-styleable>
 </resources>
