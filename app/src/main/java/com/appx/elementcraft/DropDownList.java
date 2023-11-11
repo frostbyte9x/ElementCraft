@@ -1,6 +1,7 @@
 package com.appx.elementcraft;
 
 import android.content.Context;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,20 +10,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import java.util.ArrayList;
 
 public class DropDownList extends LinearLayout {
 
     private Spinner spinner;
     private Context context;
+    private static final int NULL_INT = -99;
+    private List<DropDrownItems> items;
 
     public DropDownList(@NonNull Context context)
     {
         super(context);
         this.context =context;
+        init();
+    }
+
+    public DropDownList(@NonNull Context context, @Nullable AttributeSet attrs)
+    {
+        super(context,attrs);
         init();
     }
 
@@ -32,50 +40,37 @@ public class DropDownList extends LinearLayout {
     }
 
 
-    public void setItems(String[] items)
+    public void setItems(List<DropDrownItems> items)
     {
-        DropDownAdapter adapter = new DropDownAdapter(context, createItems(items));
+        this.items=items;
+        DropDownAdapter adapter = new DropDownAdapter(context);
         spinner.setAdapter(adapter);
     }
 
-    public void setItems(int[] imageId, String[] items)
+    public int getSelectedItemId()
     {
-        DropDownAdapter adapter = new DropDownAdapter(context, createItems(imageId,items));
+        int position = spinner.getSelectedItemPosition();
+        DropDrownItems i = items.get(position);
+        return i.getId();
     }
 
-    public int getSelectedItemPosition()
-    {
-        return spinner.getSelectedItemPosition();
-    }
-
-    private ArrayList<DropDrownItems> createItems(String[] items) {
-        ArrayList<DropDrownItems> dropDownItems = new ArrayList<>();
-        for (String text : items) {
-            dropDownItems.add(new DropDrownItems(text));
-        }
-        return dropDownItems;
-    }
-
-    private ArrayList<DropDrownItems> createItems(int[] imageId, String[] items)
-    {
-        ArrayList<DropDrownItems> dropDrownItems = new ArrayList<>();
-        for(int i=0; i<items.length;i++)
-            dropDrownItems.add(new DropDrownItems(imageId[i],items[i]));
-        return dropDrownItems;
-    }
-
-    private class DropDrownItems {
+    public class DropDrownItems {
         private String text;
         private int imageId;
 
-        private DropDrownItems(String text) {
+        private int id;
+
+        public DropDrownItems(@NonNull int id, String text) {
             this.text = text;
+            this.id=id;
+            this.imageId=NULL_INT;
         }
 
-        private DropDrownItems(int imageId, String text)
+        public DropDrownItems(@NonNull int id,int imageId, String text)
         {
             this.imageId = imageId;
             this.text = text;
+            this.id=id;
         }
 
         public String getText() {
@@ -86,11 +81,16 @@ public class DropDownList extends LinearLayout {
         {
             return imageId;
         }
+
+        public int getId()
+        {
+            return id;
+        }
     }
 
     private class DropDownAdapter extends ArrayAdapter<DropDrownItems> {
-        private DropDownAdapter(Context context, ArrayList<DropDrownItems> list) {
-            super(context, 0, list);
+        private DropDownAdapter(Context context) {
+            super(context, 0, items);
         }
 
         @NonNull
@@ -115,7 +115,7 @@ public class DropDownList extends LinearLayout {
             if (item != null)
                 textView.setText(item.getText());
 
-            if(item.getImageId() == 0)
+            if(item.getImageId() == NULL_INT)
                 image.setVisibility(GONE);
             else
                 image.setImageResource(item.getImageId());
@@ -123,3 +123,56 @@ public class DropDownList extends LinearLayout {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    private ArrayList<DropDrownItems> createItems(String[] items) {
+//        ArrayList<DropDrownItems> dropDownItems = new ArrayList<>();
+//        for (String text : items) {
+//            dropDownItems.add(new DropDrownItems(text));
+//        }
+//        return dropDownItems;
+//    }
+//
+//    private ArrayList<DropDrownItems> createItems(int[] imageId, String[] items)
+//    {
+//        ArrayList<DropDrownItems> dropDrownItems = new ArrayList<>();
+//        for(int i=0; i<items.length;i++)
+//            dropDrownItems.add(new DropDrownItems(imageId[i],items[i]));
+//        return dropDrownItems;
+//    }

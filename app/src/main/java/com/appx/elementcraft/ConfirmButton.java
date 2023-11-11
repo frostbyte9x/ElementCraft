@@ -27,9 +27,9 @@ public class ConfirmButton extends CardView {
         String text = a.getString(R.styleable.confirm_button_text);
 
         if(text != null)
-            textView.setText(text);
+            setText(text);
         else
-            textView.setText(R.string.done);
+            setText("Done");
         a.recycle();
 
     }

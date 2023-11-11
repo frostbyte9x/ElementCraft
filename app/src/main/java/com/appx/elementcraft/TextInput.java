@@ -2,22 +2,23 @@ package com.appx.elementcraft;
 
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class EditText extends LinearLayout
+public class TextInput extends LinearLayout
 {
-    private EditText editText;
+    private EditText textInput;
 
-    public EditText(@NonNull Context context)
+    public TextInput(@NonNull Context context)
     {
         super(context);
         init(context);
     }
 
-    public EditText(@NonNull Context context, @Nullable AttributeSet attrs)
+    public TextInput(@NonNull Context context, @Nullable AttributeSet attrs)
     {
         super(context,attrs);
         init(context);
@@ -36,22 +37,22 @@ public class EditText extends LinearLayout
 
     public void init(Context context)
     {
-        inflate(context, R.layout.edit_text,this);
-        editText = findViewById(R.id.editText);
+        inflate(context, R.layout.text_input,this);
+        textInput = findViewById(R.id.editText);
     }
 
     public void setText(CharSequence text)
     {
-        editText.setText(text);
+        textInput.setText(text);
     }
 
     public void setHint(CharSequence text)
     {
-        editText.setHint(text);
+        textInput.setHint(text);
     }
 
     public String getText()
     {
-        return editText.getText();
+        return textInput.getText().toString();
     }
 }

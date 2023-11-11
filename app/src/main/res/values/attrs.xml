@@ -23,4 +23,14 @@
     <declare-styleable name="section_heading">
         <attr name="text"/>
     </declare-styleable>
+
+    <declare-styleable name="amount_description_view">
+        <attr name="amount" format="string"/>
+        <attr name="description" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="action_decision_panel">
+        <attr name="cancel_text" format="string"/>
+        <attr name="confirm_text" format="string"/>
+    </declare-styleable>
 </resources>
