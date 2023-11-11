@@ -23,6 +23,5 @@ public class TickBox extends LinearLayout
     private void init(Context context)
     {
         inflate(context,R.layout.tick_box,this);
-
     }
 }
