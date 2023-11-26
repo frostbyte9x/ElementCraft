@@ -27,11 +27,10 @@ public class CancelButton extends CardView {
         String text = a.getString(R.styleable.cancel_button_text);
 
         if(text != null)
-            textView.setText(text);
+            setText(text);
         else
-            textView.setText(R.string.cancel);
+            setText("Cancel");
         a.recycle();
-
     }
 
     private void init(Context context)
@@ -43,5 +42,10 @@ public class CancelButton extends CardView {
     public void setText(CharSequence text)
     {
         textView.setText(text);
+    }
+
+    public void setVisibility(int visId)
+    {
+        super.setVisibility(visId);
     }
 }

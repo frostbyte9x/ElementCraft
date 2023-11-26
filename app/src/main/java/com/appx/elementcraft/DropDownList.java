@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -19,28 +20,28 @@ public class DropDownList extends LinearLayout {
     private Spinner spinner;
     private Context context;
     private static final int NULL_INT = -99;
-    private List<DropDrownItems> items;
+    private List<DropDownItems> items;
 
     public DropDownList(@NonNull Context context)
     {
         super(context);
-        this.context =context;
-        init();
+        init(context);
     }
 
     public DropDownList(@NonNull Context context, @Nullable AttributeSet attrs)
     {
         super(context,attrs);
-        init();
+        init(context);
     }
 
-    private void init() {
+    private void init(Context context) {
+        this.context = context;
         inflate(context, R.layout.drop_down_list, this);
         spinner = findViewById(R.id.spinner);
     }
 
 
-    public void setItems(List<DropDrownItems> items)
+    public void setItems(List<DropDownItems> items)
     {
         this.items=items;
         DropDownAdapter adapter = new DropDownAdapter(context);
@@ -50,45 +51,16 @@ public class DropDownList extends LinearLayout {
     public int getSelectedItemId()
     {
         int position = spinner.getSelectedItemPosition();
-        DropDrownItems i = items.get(position);
+        DropDownItems i = items.get(position);
         return i.getId();
     }
 
-    public class DropDrownItems {
-        private String text;
-        private int imageId;
-
-        private int id;
-
-        public DropDrownItems(@NonNull int id, String text) {
-            this.text = text;
-            this.id=id;
-            this.imageId=NULL_INT;
-        }
-
-        public DropDrownItems(@NonNull int id,int imageId, String text)
-        {
-            this.imageId = imageId;
-            this.text = text;
-            this.id=id;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public int getImageId()
-        {
-            return imageId;
-        }
-
-        public int getId()
-        {
-            return id;
-        }
+    public int getSelectedItemPosition()
+    {
+        return spinner.getSelectedItemPosition();
     }
 
-    private class DropDownAdapter extends ArrayAdapter<DropDrownItems> {
+    private class DropDownAdapter extends ArrayAdapter<DropDownItems> {
         private DropDownAdapter(Context context) {
             super(context, 0, items);
         }
@@ -110,69 +82,17 @@ public class DropDownList extends LinearLayout {
 
             TextView textView = convertView.findViewById(R.id.textView);
             ImageView image = convertView.findViewById(R.id.image);
-            DropDrownItems item = getItem(position);
+            FrameLayout frameLayout = convertView.findViewById(R.id.frameLayout);
+            DropDownItems item = getItem(position);
 
             if (item != null)
                 textView.setText(item.getText());
 
             if(item.getImageId() == NULL_INT)
-                image.setVisibility(GONE);
+                frameLayout.setVisibility(GONE);
             else
                 image.setImageResource(item.getImageId());
             return convertView;
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    private ArrayList<DropDrownItems> createItems(String[] items) {
-//        ArrayList<DropDrownItems> dropDownItems = new ArrayList<>();
-//        for (String text : items) {
-//            dropDownItems.add(new DropDrownItems(text));
-//        }
-//        return dropDownItems;
-//    }
-//
-//    private ArrayList<DropDrownItems> createItems(int[] imageId, String[] items)
-//    {
-//        ArrayList<DropDrownItems> dropDrownItems = new ArrayList<>();
-//        for(int i=0; i<items.length;i++)
-//            dropDrownItems.add(new DropDrownItems(imageId[i],items[i]));
-//        return dropDrownItems;
-//    }

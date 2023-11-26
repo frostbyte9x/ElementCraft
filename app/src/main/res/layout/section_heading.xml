@@ -13,4 +13,10 @@
         android:id="@+id/textView"
         app:text="?attr/text" />
 
+    <com.appx.elementcraft.ActionDecisionPanel
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:confirm_text="Fifa"
+        app:cancel_text="Pubg"/>
+
 </LinearLayout>

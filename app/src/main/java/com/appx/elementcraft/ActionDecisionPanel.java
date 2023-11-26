@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 public class ActionDecisionPanel extends LinearLayout{
 
-    private CancelButton cancelButton;
-    private ConfirmButton confirmButton;
+    private Button cancelButton;
+    private Button button;
 
     public ActionDecisionPanel(@NonNull Context context)
     {
@@ -23,8 +23,8 @@ public class ActionDecisionPanel extends LinearLayout{
         init(context);
 
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.action_decision_panel);
-        String confirmText = a.getString(R.styleable.confirm_button_text);
-        String cancelText = a.getString(R.styleable.cancel_button_text);
+        String confirmText = a.getString(R.styleable.action_decision_panel_confirm_text);
+        String cancelText = a.getString(R.styleable.action_decision_panel_cancel_text);
 
         if(confirmText !=null)
             setConfirmText(confirmText);
@@ -37,12 +37,12 @@ public class ActionDecisionPanel extends LinearLayout{
     {
         inflate(context,R.layout.action_decision_panel,this);
         cancelButton = findViewById(R.id.cancelButton);
-        confirmButton = findViewById(R.id.confirmButton);
+        button = findViewById(R.id.confirmButton);
     }
 
     public void setConfirmText(CharSequence text)
     {
-        confirmButton.setText(text);
+        button.setText(text);
     }
 
     public void setCancelText(CharSequence text)
