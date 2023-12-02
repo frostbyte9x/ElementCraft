@@ -36,8 +36,7 @@ public class ListItem extends LinearLayout
         int width = a.getInt(R.styleable.img_view_width,0);
         int resId = a.getInt(R.styleable.img_view_res_id,0);
 
-        configure(headingText,subHeadingText,buttonText,height,width
-        ,resId,buttonVisibility,imageVisibility);
+        configure(headingText,subHeadingText,buttonText,height,width,resId,buttonVisibility,imageVisibility);
         a.recycle();
     }
 
@@ -50,9 +49,7 @@ public class ListItem extends LinearLayout
         imgView = findViewById(R.id.imageView);
     }
 
-    public void configure(String headingText, String subHeadingText,
-                          String buttonText, int height, int width, int resId,
-                          int buttonVisibility, int imageVisibility)
+    public void configure(String headingText, String subHeadingText, String buttonText, int height, int width, int resId, int buttonVisibility, int imageVisibility)
     {
         imgView.configureImage(width,height,resId);
         heading.setText(headingText);

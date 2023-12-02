@@ -5,6 +5,9 @@
     <attr name="height" format="integer"/>
     <attr name="width" format="integer"/>
     <attr name="visibility" format="string"/>
+    <attr name="heading_text" format="string"/>
+    <attr name="cancel_text" format="string"/>
+    <attr name="confirm_text" format="string"/>
 
     <declare-styleable name="button">
         <attr name="text"/>
@@ -35,8 +38,8 @@
     </declare-styleable>
 
     <declare-styleable name="action_decision_panel">
-        <attr name="cancel_text" format="string"/>
-        <attr name="confirm_text" format="string"/>
+        <attr name="confirm_text"/>
+        <attr name="cancel_text"/>
     </declare-styleable>
 
     <declare-styleable name="img_view">
@@ -46,7 +49,7 @@
     </declare-styleable>
 
     <declare-styleable name="list_item">
-        <attr name="heading_text" format="string"/>
+        <attr name="heading_text"/>
         <attr name="subheading_text" format="string"/>
         <attr name="image_visibility" format="string"/>
         <attr name="button_visibility" format="string"/>
@@ -54,5 +57,14 @@
         <attr name="res_id"/>
         <attr name="height"/>
         <attr name="width"/>
+    </declare-styleable>
+
+    <declare-styleable name="confirmation_dialog">
+        <attr name="heading_text"/>
+        <attr name="message_text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="check_box">
+        <attr name="text"/>
     </declare-styleable>
 </resources>
