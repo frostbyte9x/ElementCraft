@@ -45,7 +45,7 @@
         android:layout_height="match_parent"
         android:gravity="end">
 
-        <com.appx.elementcraft.Button
+        <com.appx.elementcraft.FlexButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button"

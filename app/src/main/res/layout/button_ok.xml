@@ -11,7 +11,7 @@
         style="@style/buttonPrimaryText"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:text="?attr/text"
         android:id="@+id/textView"
         android:padding="5dp" />
+
 </androidx.cardview.widget.CardView>

@@ -8,18 +8,16 @@
     android:layout_margin="5dp"
     android:orientation="horizontal">
 
-    <com.appx.elementcraft.Button
+    <com.appx.elementcraft.FlexButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:confirm_text="?attr/confirm_text"
         android:layout_marginEnd="10dp"
-        app:style="button"
-        android:id="@+id/confirmButton"/>
+        android:id="@+id/confirmButton"
+        app:style="ok_button"/>
 
-    <com.appx.elementcraft.Button
+    <com.appx.elementcraft.FlexButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:style="cancel_button"
-        app:cancel_text="?attr/cancel_text"
-        android:id="@+id/cancelButton"/>
+        android:id="@+id/cancelButton"
+        app:style="cancel_button"/>
 </LinearLayout>

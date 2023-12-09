@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 public class ActionDecisionPanel extends LinearLayout{
 
-    private Button cancelButton;
-    private Button button;
+    private FlexButton cancelFlexButton;
+    private FlexButton flexButton;
 
     public ActionDecisionPanel(@NonNull Context context)
     {
@@ -22,9 +22,9 @@ public class ActionDecisionPanel extends LinearLayout{
         super(context,attrs);
         init(context);
 
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.action_decision_panel);
-        String confirmText = a.getString(R.styleable.action_decision_panel_confirm_text);
-        String cancelText = a.getString(R.styleable.action_decision_panel_cancel_text);
+        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.ActionDecisionPanel);
+        String confirmText = a.getString(R.styleable.ActionDecisionPanel_confirm_text);
+        String cancelText = a.getString(R.styleable.ActionDecisionPanel_cancel_text);
 
         if(confirmText !=null)
             setConfirmText(confirmText);
@@ -36,19 +36,17 @@ public class ActionDecisionPanel extends LinearLayout{
     private void init(Context context)
     {
         inflate(context,R.layout.action_decision_panel,this);
-        cancelButton = findViewById(R.id.cancelButton);
-        button = findViewById(R.id.confirmButton);
+        cancelFlexButton = findViewById(R.id.cancelButton);
+        flexButton = findViewById(R.id.confirmButton);
     }
 
     public void setConfirmText(CharSequence text)
     {
-        button.setText(text);
+        flexButton.setText(text);
     }
 
     public void setCancelText(CharSequence text)
     {
-        cancelButton.setText(text);
+        cancelFlexButton.setText(text);
     }
-
-
 }

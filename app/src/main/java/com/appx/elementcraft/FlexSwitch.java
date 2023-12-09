@@ -3,19 +3,22 @@ package com.appx.elementcraft;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.content.Context;
+import android.widget.Switch;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 
-public class Switch extends LinearLayout
+public class FlexSwitch extends LinearLayout
 {
-    public Switch(@NonNull Context context)
+    Switch s;
+    public FlexSwitch(@NonNull Context context)
     {
         super(context);
         init(context);
     }
 
-    public Switch(@NonNull Context context, @Nullable AttributeSet attrs)
+    public FlexSwitch(@NonNull Context context, @Nullable AttributeSet attrs)
     {
         super(context);
         init(context);

@@ -13,7 +13,7 @@ public class ListItem extends LinearLayout
     private TextView heading;
     private TextView subHeading;
     private ImgView imgView;
-    private Button button;
+    private FlexButton flexButton;
     public ListItem(@NonNull Context context)
     {
         super(context);
@@ -45,7 +45,7 @@ public class ListItem extends LinearLayout
         inflate(context,R.layout.list_item,this);
         heading = findViewById(R.id.heading);
         subHeading = findViewById(R.id.subHeading);
-        button = findViewById(R.id.button);
+        flexButton = findViewById(R.id.button);
         imgView = findViewById(R.id.imageView);
     }
 
@@ -54,8 +54,8 @@ public class ListItem extends LinearLayout
         imgView.configureImage(width,height,resId);
         heading.setText(headingText);
         subHeading.setText(subHeadingText);
-        button.setText(buttonText);
-        button.setVisibility(buttonVisibility);
+        flexButton.setText(buttonText);
+        flexButton.setVisibility(buttonVisibility);
         imgView.setVisibility(imageVisibility);
     }
 
