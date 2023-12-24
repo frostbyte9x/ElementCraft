@@ -67,4 +67,9 @@
     <declare-styleable name="check_box">
         <attr name="text"/>
     </declare-styleable>
+
+    <declare-styleable name="tinted_icon_view">
+        <attr name="res_icon" format="integer" />
+        <attr name="res_bg" format="integer"/>
+    </declare-styleable>
 </resources>

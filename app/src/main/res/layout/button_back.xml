@@ -10,8 +10,7 @@
         android:layout_height="20dp"
         android:layout_gravity="center"
         android:contentDescription="@string/contentDescription"
-        android:backgroundTint="#fff"
-        android:src="@drawable/ic_arrow_back" />
+        android:backgroundTint="#fff" />
 
     <TextView
         style="@style/textPrimary"

@@ -3,21 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="10dp"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Sample"
+        android:layout_marginBottom="20dp"
         android:id="@+id/heading"
+        android:textColor="#000"
+        android:textStyle="bold"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/message"
-        android:text="This is a sample text. This is a message" />
+        android:textColor="#000"
+        android:layout_marginBottom="50dp" />
 
     <com.appx.elementcraft.ActionDecisionPanel
         android:layout_width="match_parent"

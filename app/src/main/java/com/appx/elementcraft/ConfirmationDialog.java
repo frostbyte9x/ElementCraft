@@ -40,6 +40,7 @@ public class ConfirmationDialog extends AlertDialog
     private void init(Context context)
     {
         View customView = LayoutInflater.from(context).inflate(R.layout.confirmation_dialog, null);
+        customView.setBackgroundResource(R.drawable.dialog_background);
         setView(customView);
         adp = customView.findViewById(R.id.adp);
         heading = customView.findViewById(R.id.heading);
@@ -54,5 +55,19 @@ public class ConfirmationDialog extends AlertDialog
     public void setMessage(String charSequence)
     {
         msg.setText(charSequence);
+    }
+
+    public void showDialog(String heading, String message)
+    {
+        setHeading(heading!=null?heading:"Alert!");
+        setMessage(message);
+        show();
+    }
+
+    public void showDialog(String message)
+    {
+        setHeading("Alert!");
+        setMessage(message);
+        show();
     }
 }

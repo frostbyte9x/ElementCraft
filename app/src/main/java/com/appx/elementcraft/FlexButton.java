@@ -16,7 +16,7 @@ public class FlexButton extends LinearLayout
         TypedArray array = context.obtainStyledAttributes(attrs,R.styleable.FlexButton);
         String style = array.getString(R.styleable.FlexButton_style);
         String text = array.getString(R.styleable.FlexButton_text);
-        textView = findViewById(R.id.textView);
+        //textView = findViewById(R.id.textView);
         setButtonStyle(context,style);
 
         setText(text != null ? text : "Done");
@@ -30,11 +30,12 @@ public class FlexButton extends LinearLayout
     {
         super.setVisibility(visId);
     }
-    public void setButtonStyle(Context context,String style)
+    private void setButtonStyle(Context context,String style)
     {
-        LayoutInflater.from(context).inflate(resolveStyleLayoutResource(style), this, true);
+        LayoutInflater.from(context).inflate(resolveStyledLayoutResource(style), this, true);
+        textView = findViewById(R.id.textView);
     }
-    private int resolveStyleLayoutResource(String style)
+    private int resolveStyledLayoutResource(String style)
     {
         switch (style)
         {

@@ -3,4 +3,17 @@
     <color name="secondaryTextColor">#79758D</color>
     <color name="buttonPrimaryTextColor">#EDCAD5F4</color>
     <color name="cardBackgroundColor">#4877D4</color>
+    <color name="white">#fff</color>
+    <color name="azure">#3380FF</color>
+    <color name="golden">#FFB849</color>
+    <color name="rose">#F0A0A0</color>
+    <color name="lavender">#9181DB</color>
+    <color name="valuePositive">#219653</color>
+    <color name="valueNegative">#EB5757</color>
+    <color name="azureBackground">#D5E6FB</color>
+    <color name="goldenBackground">#FFEBCD</color>
+    <color name="roseBackground">#FFD2D2</color>
+    <color name="lavenderBackground">#DBD3FF</color>
+    <color name="valuePositiveBackground">#D3EADD</color>
+    <color name="valueNegativeBackground">#FBDDDD</color>
 </resources>

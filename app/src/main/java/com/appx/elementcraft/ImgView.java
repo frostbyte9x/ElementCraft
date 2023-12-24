@@ -60,6 +60,6 @@ public class ImgView extends LinearLayout {
 
     public void setImage(int resId)
     {
-        imageView.setImageResource(R.drawable.ic_cat);
+        imageView.setImageResource(resId);
     }
 }
