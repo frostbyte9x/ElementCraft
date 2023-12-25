@@ -35,7 +35,7 @@ public class TextInput extends LinearLayout
         a.recycle();
     }
 
-    public void init(Context context)
+    private void init(Context context)
     {
         inflate(context, R.layout.text_input,this);
         textInput = findViewById(R.id.editText);

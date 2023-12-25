@@ -72,4 +72,9 @@
         <attr name="res_icon" format="integer" />
         <attr name="res_bg" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="TintedTextView">
+        <attr name="text"/>
+        <attr name="style" format="string"/>
+    </declare-styleable>
 </resources>
