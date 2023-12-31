@@ -8,9 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 public class ActionDecisionPanel extends LinearLayout{
 
-    private FlexButton cancelFlexButton;
-    private FlexButton flexButton;
-
+    private FlexButton cancelButton;
+    private FlexButton confirmButton;
     public ActionDecisionPanel(@NonNull Context context)
     {
         super(context);
@@ -36,17 +35,17 @@ public class ActionDecisionPanel extends LinearLayout{
     private void init(Context context)
     {
         inflate(context,R.layout.action_decision_panel,this);
-        cancelFlexButton = findViewById(R.id.cancelButton);
-        flexButton = findViewById(R.id.confirmButton);
+        cancelButton = findViewById(R.id.cancelButton);
+        confirmButton = findViewById(R.id.confirmButton);
     }
 
     public void setConfirmText(CharSequence text)
     {
-        flexButton.setText(text);
+        confirmButton.setText(text);
     }
 
     public void setCancelText(CharSequence text)
     {
-        cancelFlexButton.setText(text);
+        cancelButton.setText(text);
     }
 }

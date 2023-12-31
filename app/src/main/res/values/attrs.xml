@@ -8,11 +8,12 @@
     <attr name="heading_text" format="string"/>
     <attr name="cancel_text" format="string"/>
     <attr name="confirm_text" format="string"/>
+    <attr name="style" format="string"/>
 
     <declare-styleable name="FlexButton">
         <attr name="text"/>
         <attr name="visibility"/>
-        <attr name="style" format="string"/>
+        <attr name="style"/>
     </declare-styleable>
 
     <declare-styleable name="cancel_button">
@@ -68,13 +69,13 @@
         <attr name="text"/>
     </declare-styleable>
 
-    <declare-styleable name="tinted_icon_view">
-        <attr name="res_icon" format="integer" />
-        <attr name="res_bg" format="integer"/>
+    <declare-styleable name="TintedIconView">
+        <attr name="res_id"/>
+        <attr name="style"/>
     </declare-styleable>
 
     <declare-styleable name="TintedTextView">
         <attr name="text"/>
-        <attr name="style" format="string"/>
+        <attr name="style"/>
     </declare-styleable>
 </resources>

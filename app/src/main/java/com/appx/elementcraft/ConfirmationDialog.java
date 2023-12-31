@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.time.Duration;
+
 public class ConfirmationDialog extends AlertDialog
 {
     private ActionDecisionPanel adp;

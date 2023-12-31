@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+        <com.appx.elementcraft.ImgView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image1"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/circularImageView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop" />-->
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="110dp">
+
+        <com.appx.elementcraft.ImgView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image2"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/circularImageView2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop" />-->
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="220dp">
+
+        <com.appx.elementcraft.ImgView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/image3"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/circularImageView3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop" />-->
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

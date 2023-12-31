@@ -62,4 +62,9 @@ public class ImgView extends LinearLayout {
     {
         imageView.setImageResource(resId);
     }
+
+    public void setScaleType()
+    {
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+    }
 }

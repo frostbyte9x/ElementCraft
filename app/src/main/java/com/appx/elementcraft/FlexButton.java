@@ -10,17 +10,25 @@ import android.widget.TextView;
 public class FlexButton extends LinearLayout
 {
     private TextView textView;
+
     public FlexButton(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray array = context.obtainStyledAttributes(attrs,R.styleable.FlexButton);
         String style = array.getString(R.styleable.FlexButton_style);
         String text = array.getString(R.styleable.FlexButton_text);
-        //textView = findViewById(R.id.textView);
+
         setButtonStyle(context,style);
+        init();
 
         setText(text != null ? text : "Done");
         array.recycle();
+    }
+
+    private void init()
+    {
+        textView = findViewById(R.id.textView);
+
     }
     public void setText(CharSequence text)
     {
@@ -28,12 +36,11 @@ public class FlexButton extends LinearLayout
     }
     public void setVisibility(int visId)
     {
-        super.setVisibility(visId);
+        setVisibility(visId);
     }
     private void setButtonStyle(Context context,String style)
     {
         LayoutInflater.from(context).inflate(resolveStyledLayoutResource(style), this, true);
-        textView = findViewById(R.id.textView);
     }
     private int resolveStyledLayoutResource(String style)
     {
