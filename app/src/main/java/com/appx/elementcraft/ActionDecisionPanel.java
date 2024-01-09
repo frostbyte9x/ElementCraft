@@ -10,6 +10,14 @@ public class ActionDecisionPanel extends LinearLayout{
 
     private FlexButton cancelButton;
     private FlexButton confirmButton;
+    private ActionListener actionListener;
+
+    public interface ActionListener
+    {
+        void onConfirmClick();
+        void onCancelClick();
+    }
+
     public ActionDecisionPanel(@NonNull Context context)
     {
         super(context);
@@ -30,6 +38,14 @@ public class ActionDecisionPanel extends LinearLayout{
         if(cancelText !=null)
             setCancelText(cancelText);
         a.recycle();
+
+        confirmButton.setOnClickListener(v -> actionListener.onConfirmClick());
+        cancelButton.setOnClickListener(v-> actionListener.onCancelClick());
+    }
+
+    public void setActionListener(ActionListener actionListener)
+    {
+        this.actionListener=actionListener;
     }
 
     private void init(Context context)
@@ -49,3 +65,4 @@ public class ActionDecisionPanel extends LinearLayout{
         cancelButton.setText(text);
     }
 }
+

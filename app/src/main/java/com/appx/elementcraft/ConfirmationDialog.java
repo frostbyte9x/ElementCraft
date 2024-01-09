@@ -7,16 +7,31 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import android.view.View;
 import android.view.LayoutInflater;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class ConfirmationDialog extends AlertDialog
 {
     private ActionDecisionPanel adp;
     private TextView heading;
     private TextView msg;
+    private ActionListener actionListener;
+
+    public interface ActionListener
+    {
+        void onConfirmClick();
+        void onCancelClick();
+    }
+
+    public void setActionListener(ActionListener actionListener)
+    {
+        this.actionListener = actionListener;
+    }
 
     public ConfirmationDialog(@NonNull Context context)
     {
@@ -42,11 +57,23 @@ public class ConfirmationDialog extends AlertDialog
     private void init(Context context)
     {
         View customView = LayoutInflater.from(context).inflate(R.layout.confirmation_dialog, null);
-        customView.setBackgroundResource(R.drawable.dialog_background);
+        Objects.requireNonNull(getWindow()).setBackgroundDrawableResource(R.drawable.dialog_background);
         setView(customView);
         adp = customView.findViewById(R.id.adp);
         heading = customView.findViewById(R.id.heading);
         msg = customView.findViewById(R.id.message);
+
+        adp.setActionListener(new ActionDecisionPanel.ActionListener() {
+            @Override
+            public void onConfirmClick() {
+                actionListener.onConfirmClick();
+            }
+
+            @Override
+            public void onCancelClick() {
+                actionListener.onCancelClick();
+            }
+        });
     }
 
     public void setHeading(String charSequence)
@@ -65,7 +92,6 @@ public class ConfirmationDialog extends AlertDialog
         setMessage(message);
         show();
     }
-
     public void showDialog(String message)
     {
         setHeading("Alert!");

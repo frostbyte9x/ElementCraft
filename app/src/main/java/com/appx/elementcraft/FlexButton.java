@@ -34,10 +34,10 @@ public class FlexButton extends LinearLayout
     {
         textView.setText(text);
     }
-    public void setVisibility(int visId)
-    {
-        setVisibility(visId);
-    }
+//    public void setButtonVisibility(int visId)
+//    {
+//        setVisibility(visId);
+//    }
     private void setButtonStyle(Context context,String style)
     {
         LayoutInflater.from(context).inflate(resolveStyledLayoutResource(style), this, true);

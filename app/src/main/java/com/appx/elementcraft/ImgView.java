@@ -53,10 +53,10 @@ public class ImgView extends LinearLayout {
         }
     }
 
-    public void setVisibility(int visId)
-    {
-        super.setVisibility(visId);
-    }
+//    public void setVisibility(int visId)
+//    {
+//        super.setVisibility(visId);
+//    }
 
     public void setImage(int resId)
     {

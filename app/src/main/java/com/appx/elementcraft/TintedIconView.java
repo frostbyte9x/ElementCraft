@@ -43,26 +43,15 @@ public class TintedIconView extends FrameLayout
         iconBackground = findViewById(R.id.imageViewBackground);
     }
 
-    private int resolveStyledDrawableResource(String theme)
+    private int[] resolveStyledResource(String theme)
     {
-        switch(theme)
-        {
-            case "rose": return R.drawable.bg_rose;
-            case "golden": return R.drawable.bg_golden;
-            case "lavender": return R.drawable.bg_lavender;
-            default: return R.drawable.bg_azure;
-        }
-    }
-
-    private int resolveStyledTextColor(String theme)
-    {
-        switch(theme)
-        {
-            case "rose":return R.color.rose;
-            case "azure": return R.color.azure;
-            case "golden":return R.color.golden;
-            default: return R.color.lavender;
-        }
+        if(theme.equalsIgnoreCase("rose"))
+            return new int[]{R.color.rose,R.drawable.bg_rose};
+        else if(theme.equalsIgnoreCase("lavender"))
+            return new int[]{R.color.lavender,R.drawable.bg_lavender};
+        else if(theme.equalsIgnoreCase("golden"))
+            return new int[]{R.color.golden,R.drawable.bg_golden};
+        else return new int[]{R.color.azure,R.drawable.bg_azure};
     }
 
     public void setIcon(int resId)
@@ -72,11 +61,10 @@ public class TintedIconView extends FrameLayout
 
     public void setIcon(int resId, String theme)
     {
-        int iconColor = resolveStyledTextColor(theme);
-        int background = resolveStyledDrawableResource(theme);
-        iconBackground.setImageResource(background);
+        int[] res = resolveStyledResource(theme);
+        iconBackground.setImageResource(res[1]);
         icon.setImageResource(resId);
-        icon.setColorFilter(ContextCompat.getColor(context, iconColor), android.graphics.PorterDuff.Mode.MULTIPLY);
+        icon.setColorFilter(ContextCompat.getColor(context, res[0]), android.graphics.PorterDuff.Mode.MULTIPLY);
     }
 
     public void setIconBackground(int resId)

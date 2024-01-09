@@ -3,25 +3,25 @@ package com.appx.elementcraft;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.content.Context;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public class BankDataView extends LinearLayout
 {
-    public BankDataView(Context context, AttributeSet attrs)
+    public BankDataView(@NonNull Context context)
     {
-        super(context,attrs);
-
-//        TypedArray array = context.obtainStyledAttributes(attrs);
-//        array.recycle();
+        super(context);
+        init(context);
     }
 
-    private int resolveStyledDrawableResource(String style)
+    public BankDataView(@NonNull Context context,@Nullable AttributeSet attrs)
     {
-        switch(style)
-        {
-            case "rose": return R.drawable.bg_rose;
-            case "golden": return R.drawable.bg_golden;
-            case "lavender": return R.drawable.bg_lavender;
-            default: return R.drawable.bg_azure;
-        }
+        super(context, attrs);
+        init(context);
+    }
+
+    private void init(@NonNull Context context)
+    {
+        inflate(context,R.layout.bank_data_view,this);
     }
 }

@@ -40,7 +40,6 @@ public class TextInput extends LinearLayout
         inflate(context, R.layout.text_input,this);
         textInput = findViewById(R.id.editText);
     }
-
     public void setText(CharSequence text)
     {
         textInput.setText(text);
