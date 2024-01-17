@@ -59,4 +59,12 @@ public class ListItem extends LinearLayout
         imgView.setVisibility(imageVisibility);
     }
 
+    public void configure(String headingText,String subHeadingText)
+    {
+        flexButton.setVisibility(GONE);
+        imgView.setVisibility(GONE);
+        heading.setText(headingText);
+        subHeading.setText(subHeadingText);
+    }
+
 }

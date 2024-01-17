@@ -7,12 +7,8 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import android.view.View;
 import android.view.LayoutInflater;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import java.time.Duration;
 import java.util.Objects;
 
 public class ConfirmationDialog extends AlertDialog
@@ -66,12 +62,14 @@ public class ConfirmationDialog extends AlertDialog
         adp.setActionListener(new ActionDecisionPanel.ActionListener() {
             @Override
             public void onConfirmClick() {
-                actionListener.onConfirmClick();
+                if(actionListener != null)
+                    actionListener.onConfirmClick();
             }
 
             @Override
             public void onCancelClick() {
-                actionListener.onCancelClick();
+                if(actionListener != null)
+                    actionListener.onCancelClick();
             }
         });
     }

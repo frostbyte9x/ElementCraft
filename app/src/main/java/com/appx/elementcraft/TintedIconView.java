@@ -54,10 +54,10 @@ public class TintedIconView extends FrameLayout
         else return new int[]{R.color.azure,R.drawable.bg_azure};
     }
 
-    public void setIcon(int resId)
-    {
-        icon.setImageResource(resId);
-    }
+//    public void setIcon(int resId)
+//    {
+//        icon.setImageResource(resId);
+//    }
 
     public void setIcon(int resId, String theme)
     {
@@ -67,8 +67,8 @@ public class TintedIconView extends FrameLayout
         icon.setColorFilter(ContextCompat.getColor(context, res[0]), android.graphics.PorterDuff.Mode.MULTIPLY);
     }
 
-    public void setIconBackground(int resId)
-    {
-        icon.setImageResource(resId);
-    }
+//    public void setIconBackground(int resId)
+//    {
+//        icon.setImageResource(resId);
+//    }
 }
