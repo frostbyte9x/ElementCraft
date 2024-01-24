@@ -2,16 +2,20 @@ package com.appx.elementcraft;
 
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.appx.elementcraft.databinding.AmountDescriptionViewBinding;
 
 public class AmountDescriptionView extends LinearLayout
 {
+    private AmountDescriptionViewBinding binding;
     private TextView amount;
     private TextView description;
+
     public AmountDescriptionView(@NonNull Context context)
     {
         super(context);
@@ -37,9 +41,9 @@ public class AmountDescriptionView extends LinearLayout
 
     public void init(Context context)
     {
-        inflate(context,R.layout.amount_description_view,this);
-        amount = findViewById(R.id.amount);
-        description = findViewById(R.id.description);
+        binding = AmountDescriptionViewBinding.inflate(LayoutInflater.from(context),this,true);
+        amount = binding.amount;
+        description = binding.description;
     }
 
     public void setAmount(CharSequence amountText)

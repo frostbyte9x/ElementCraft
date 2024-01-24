@@ -14,9 +14,11 @@ import android.widget.TextView;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.appx.elementcraft.databinding.DropDownListBinding;
+import com.appx.elementcraft.databinding.DropDownListItemBinding;
 
 public class DropDownList extends LinearLayout {
-
+    private DropDownListBinding binding;
     private Spinner spinner;
     private Context context;
     private static final int NULL_INT = -99;
@@ -34,12 +36,12 @@ public class DropDownList extends LinearLayout {
         init(context);
     }
 
-    private void init(Context context) {
+    private void init(Context context)
+    {
         this.context = context;
-        inflate(context, R.layout.drop_down_list, this);
-        spinner = findViewById(R.id.spinner);
+        binding = DropDownListBinding.inflate(LayoutInflater.from(context),this,true);
+        spinner = binding.spinner;
     }
-
 
     public void setItems(List<DropDownItems> items)
     {
@@ -77,12 +79,20 @@ public class DropDownList extends LinearLayout {
         }
 
         private View initView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null)
-                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.drop_down_list_item, parent, false);
+            DropDownListItemBinding binding;
 
-            TextView textView = convertView.findViewById(R.id.textView);
-            ImageView image = convertView.findViewById(R.id.image);
-            FrameLayout frameLayout = convertView.findViewById(R.id.frameLayout);
+            if(convertView == null)
+            {
+                binding = DropDownListItemBinding.inflate(LayoutInflater.from(context),parent,true);
+                convertView = binding.getRoot();
+                convertView.setTag(binding);
+            }
+            else
+                binding=(DropDownListItemBinding)convertView.getTag();
+
+            TextView textView = binding.textView;
+            ImageView image = binding.image;
+            FrameLayout frameLayout = binding.frameLayout;
             DropDownItems item = getItem(position);
 
             if (item != null)

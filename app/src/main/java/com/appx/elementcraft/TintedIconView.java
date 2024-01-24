@@ -2,19 +2,22 @@ package com.appx.elementcraft;
 
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-
+import com.appx.elementcraft.databinding.TintedIconViewBinding;
 import android.content.Context;
 
 public class TintedIconView extends FrameLayout
 {
+    private TintedIconViewBinding binding;
     private ImageView icon;
     private ImageView iconBackground;
     private Context context;
+
     public TintedIconView(@NonNull Context context)
     {
         super(context);
@@ -38,9 +41,9 @@ public class TintedIconView extends FrameLayout
 
     private void init(Context context)
     {
-        inflate(context,R.layout.tinted_icon_view,this);
-        icon = findViewById(R.id.imageView);
-        iconBackground = findViewById(R.id.imageViewBackground);
+        binding = TintedIconViewBinding.inflate(LayoutInflater.from(context),this,true);
+        icon = binding.imageView;
+        iconBackground = binding.imageViewBackground;
     }
 
     private int[] resolveStyledResource(String theme)

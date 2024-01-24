@@ -3,17 +3,20 @@ package com.appx.elementcraft;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import com.appx.elementcraft.databinding.TickBoxBinding;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class TickBox extends LinearLayout
 {
+    private TickBoxBinding binding;
     private TextView textView;
     private CheckBox checkBox;
+
     public TickBox(@NonNull Context context)
     {
         super(context);
@@ -33,9 +36,9 @@ public class TickBox extends LinearLayout
 
     private void init(Context context)
     {
-        inflate(context,R.layout.tick_box,this);
-        textView = findViewById(R.id.textView);
-        checkBox = findViewById(R.id.checkBox);
+        binding = TickBoxBinding.inflate(LayoutInflater.from(context),this,true);
+        textView = binding.textView;
+        checkBox = binding.checkBox;
     }
 
 

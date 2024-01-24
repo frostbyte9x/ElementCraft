@@ -11,12 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:id="@+id/confirmButton"
+        android:id="@+id/confirm_button"
         app:style="ok_button"/>
 
     <com.appx.elementcraft.FlexButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cancelButton"
+        android:id="@+id/cancel_button"
         app:style="cancel_button"/>
+
 </LinearLayout>

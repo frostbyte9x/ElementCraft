@@ -2,12 +2,16 @@ package com.appx.elementcraft;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-public class ActionDecisionPanel extends LinearLayout{
+import com.appx.elementcraft.databinding.ActionDecisionPanelBinding;
 
+public class ActionDecisionPanel extends LinearLayout
+{
+    private ActionDecisionPanelBinding binding;
     private FlexButton cancelButton;
     private FlexButton confirmButton;
     private ActionListener actionListener;
@@ -45,14 +49,14 @@ public class ActionDecisionPanel extends LinearLayout{
 
     public void setActionListener(ActionListener actionListener)
     {
-        this.actionListener=actionListener;
+        this.actionListener = actionListener;
     }
 
     private void init(Context context)
     {
-        inflate(context,R.layout.action_decision_panel,this);
-        cancelButton = findViewById(R.id.cancelButton);
-        confirmButton = findViewById(R.id.confirmButton);
+        binding = ActionDecisionPanelBinding.inflate(LayoutInflater.from(context),this,true);
+        cancelButton = binding.cancelButton;
+        confirmButton = binding.confirmButton;
     }
 
     public void setConfirmText(CharSequence text)

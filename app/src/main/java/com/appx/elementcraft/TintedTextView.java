@@ -3,13 +3,16 @@ package com.appx.elementcraft;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.appx.elementcraft.databinding.TintedTextViewBinding;
 
 public class TintedTextView extends LinearLayout
 {
+    private TintedTextViewBinding binding;
     private TextView textView;
 
     public TintedTextView(@NonNull Context context)
@@ -31,8 +34,8 @@ public class TintedTextView extends LinearLayout
 
     private void init(Context context)
     {
-        inflate(context,R.layout.tinted_text_view,this);
-        textView = findViewById(R.id.textView);
+        binding = TintedTextViewBinding.inflate(LayoutInflater.from(context),this,true);
+        textView = binding.textView;
     }
 
     public void setText()

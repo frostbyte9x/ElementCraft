@@ -8,12 +8,13 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.appx.elementcraft.databinding.DatePickerDialogBinding;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatePickerDialog extends AlertDialog
 {
+    private DatePickerDialogBinding binding;
     private RecyclerView recView;
     private DateAdapter adapter;
     private List<String> dateList;
@@ -27,11 +28,13 @@ public class DatePickerDialog extends AlertDialog
         dateList = new ArrayList<>();
         adapter = new DateAdapter(dateList);
 
+//        binding = DatePickerDialogBinding.inflate(LayoutInflater.from(context));
+//        setView(binding.getRoot());
         LayoutInflater inflater = LayoutInflater.from(context);
         View dialogView = inflater.inflate(R.layout.date_picker_dialog,null);
         setView(dialogView);
 
-        recView = dialogView.findViewById(R.id.recView);
+        //recView = dialogView.findViewById(R.id.recView);
         recView.setAdapter(adapter);
         recView.setLayoutManager(new GridLayoutManager(context,7,GridLayoutManager.HORIZONTAL,false));
     }

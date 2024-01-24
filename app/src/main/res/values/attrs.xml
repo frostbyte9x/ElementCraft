@@ -43,13 +43,13 @@
         <attr name="cancel_text"/>
     </declare-styleable>
 
-    <declare-styleable name="img_view">
+    <declare-styleable name="ImgView">
         <attr name="res_id"/>
         <attr name="height"/>
         <attr name="width"/>
     </declare-styleable>
 
-    <declare-styleable name="list_item">
+    <declare-styleable name="ListItem">
         <attr name="heading_text"/>
         <attr name="subheading_text" format="string"/>
         <attr name="image_visibility" format="string"/>
