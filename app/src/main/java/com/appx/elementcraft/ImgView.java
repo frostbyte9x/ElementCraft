@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import com.appx.elementcraft.databinding.ImgViewBinding;
 
 public class ImgView extends LinearLayout {
 
@@ -35,12 +37,13 @@ public class ImgView extends LinearLayout {
 
     private void init(Context context)
     {
+        ImgViewBinding binding = ImgViewBinding.inflate(LayoutInflater.from(context),this,true);
+        imageView = binding.imageView;
 //        setImage(0);
-        Log.i("ImgView","Inside init method.");
-        inflate(context,R.layout.img_view,this);
-        imageView = findViewById(R.id.imageView);
-        Log.i("ImgView","Exiting init method.");
-
+//        Log.i("ImgView","Inside init method.");
+//        inflate(context,R.layout.img_view,this);
+//        imageView = findViewById(R.id.imageView);
+//        Log.i("ImgView","Exiting init method.");
     }
 
     public void configureImage(int width, int height,int resId)
@@ -49,13 +52,13 @@ public class ImgView extends LinearLayout {
             setVisibility(View.GONE);
         else
         {
-            Log.i("ImgView","Trying to resize image.");
+//            Log.i("ImgView","Trying to resize image.");
             setImage(resId);
             float scale = getResources().getDisplayMetrics().density;
             width = (int)(width * scale + 0.5f);
             height = (int)(height * scale + 0.5f);
             imageView.setLayoutParams(new ViewGroup.LayoutParams(width, height));
-            Log.i("ImgView","Exiting configure Image method.");
+//            Log.i("ImgView","Exiting configure Image method.");
 
         }
     }
@@ -67,9 +70,9 @@ public class ImgView extends LinearLayout {
 
     public void setImage(int resId)
     {
-        Log.i("ImgView","Inside setImage method.");
+//        Log.i("ImgView","Inside setImage method.");
         imageView.setImageResource(resId);
-        Log.i("ImgView","Exiting setImage method.");
+//        Log.i("ImgView","Exiting setImage method.");
 
     }
 

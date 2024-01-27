@@ -13,7 +13,6 @@ import android.content.Context;
 
 public class TintedIconView extends FrameLayout
 {
-    private TintedIconViewBinding binding;
     private ImageView icon;
     private ImageView iconBackground;
     private Context context;
@@ -41,7 +40,7 @@ public class TintedIconView extends FrameLayout
 
     private void init(Context context)
     {
-        binding = TintedIconViewBinding.inflate(LayoutInflater.from(context),this,true);
+        TintedIconViewBinding binding = TintedIconViewBinding.inflate(LayoutInflater.from(context),this,true);
         icon = binding.imageView;
         iconBackground = binding.imageViewBackground;
     }

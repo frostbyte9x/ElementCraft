@@ -24,9 +24,10 @@
         <attr name="text"/>
     </declare-styleable>
 
-    <declare-styleable name="edittext">
+    <declare-styleable name="TextInput">
         <attr name="text"/>
         <attr name="hint" format="string"/>
+        <attr name="heading_text"/>
     </declare-styleable>
     
     <declare-styleable name="section_heading">

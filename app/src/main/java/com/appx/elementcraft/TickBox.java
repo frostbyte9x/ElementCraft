@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 
 public class TickBox extends LinearLayout
 {
-    private TickBoxBinding binding;
     private TextView textView;
     private CheckBox checkBox;
 
@@ -36,11 +35,10 @@ public class TickBox extends LinearLayout
 
     private void init(Context context)
     {
-        binding = TickBoxBinding.inflate(LayoutInflater.from(context),this,true);
+        TickBoxBinding binding = TickBoxBinding.inflate(LayoutInflater.from(context),this,true);
         textView = binding.textView;
         checkBox = binding.checkBox;
     }
-
 
     public void setLabel(String charSequence)
     {

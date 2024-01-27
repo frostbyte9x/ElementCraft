@@ -11,7 +11,6 @@ import com.appx.elementcraft.databinding.ActionDecisionPanelBinding;
 
 public class ActionDecisionPanel extends LinearLayout
 {
-    private ActionDecisionPanelBinding binding;
     private FlexButton cancelButton;
     private FlexButton confirmButton;
     private ActionListener actionListener;
@@ -54,7 +53,7 @@ public class ActionDecisionPanel extends LinearLayout
 
     private void init(Context context)
     {
-        binding = ActionDecisionPanelBinding.inflate(LayoutInflater.from(context),this,true);
+        ActionDecisionPanelBinding binding = ActionDecisionPanelBinding.inflate(LayoutInflater.from(context),this,true);
         cancelButton = binding.cancelButton;
         confirmButton = binding.confirmButton;
     }

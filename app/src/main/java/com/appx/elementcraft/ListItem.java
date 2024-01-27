@@ -12,7 +12,7 @@ import com.appx.elementcraft.databinding.ListItemBinding;
 
 public class ListItem extends LinearLayout
 {
-    private ListItemBinding binding;
+//    private ListItemBinding binding;
     private TextView heading;
     private TextView subHeading;
 //    private ImgView imgView;
@@ -57,7 +57,7 @@ public class ListItem extends LinearLayout
 
     private void init(Context context)
     {
-        binding = ListItemBinding.inflate(LayoutInflater.from(context),this,true);
+        ListItemBinding binding = ListItemBinding.inflate(LayoutInflater.from(context),this,true);
         heading = binding.heading;
         subHeading = binding.subHeading;
 //        inflate(context,R.layout.list_item,this);

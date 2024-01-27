@@ -18,7 +18,6 @@ import com.appx.elementcraft.databinding.DropDownListBinding;
 import com.appx.elementcraft.databinding.DropDownListItemBinding;
 
 public class DropDownList extends LinearLayout {
-    private DropDownListBinding binding;
     private Spinner spinner;
     private Context context;
     private static final int NULL_INT = -99;
@@ -39,7 +38,7 @@ public class DropDownList extends LinearLayout {
     private void init(Context context)
     {
         this.context = context;
-        binding = DropDownListBinding.inflate(LayoutInflater.from(context),this,true);
+        DropDownListBinding binding = DropDownListBinding.inflate(LayoutInflater.from(context),this,true);
         spinner = binding.spinner;
     }
 

@@ -12,7 +12,6 @@ import com.appx.elementcraft.databinding.TintedTextViewBinding;
 
 public class TintedTextView extends LinearLayout
 {
-    private TintedTextViewBinding binding;
     private TextView textView;
 
     public TintedTextView(@NonNull Context context)
@@ -34,7 +33,7 @@ public class TintedTextView extends LinearLayout
 
     private void init(Context context)
     {
-        binding = TintedTextViewBinding.inflate(LayoutInflater.from(context),this,true);
+        TintedTextViewBinding binding = TintedTextViewBinding.inflate(LayoutInflater.from(context),this,true);
         textView = binding.textView;
     }
 

@@ -10,7 +10,7 @@
         android:contentDescription="@string/contentDescription"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:id="@+id/imageView"
+        android:id="@+id/image_view"
         app:height="@attr/height"
         app:width="@attr/width"
         app:res_id="@attr/res_id" />
