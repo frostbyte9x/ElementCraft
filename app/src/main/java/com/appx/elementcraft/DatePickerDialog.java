@@ -14,7 +14,6 @@ import java.util.List;
 
 public class DatePickerDialog extends AlertDialog
 {
-    private DatePickerDialogBinding binding;
     private RecyclerView recView;
     private DateAdapter adapter;
     private List<String> dateList;

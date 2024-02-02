@@ -36,16 +36,18 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="end">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/button_layout"
+        android:gravity="end">
 
-<!--        <com.appx.elementcraft.FlexButton-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:id="@+id/button"-->
-<!--            android:layout_gravity="center|end"-->
-<!--            app:style="Ok" />-->
-<!--    </LinearLayout>-->
+        <com.appx.elementcraft.FlexButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flex_button"
+            android:layout_gravity="center|end"
+            app:style="Ok" />
+    </LinearLayout>
+
 </LinearLayout>
