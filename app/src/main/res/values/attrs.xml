@@ -6,22 +6,31 @@
     <attr name="width" format="integer"/>
     <attr name="visibility" format="string"/>
     <attr name="heading_text" format="string"/>
+    <attr name="subheading_text" format="string"/>
     <attr name="cancel_text" format="string"/>
     <attr name="confirm_text" format="string"/>
     <attr name="style" format="string"/>
+    <attr name="button_image" format="reference"/>
 
     <declare-styleable name="FlexButton">
         <attr name="text"/>
         <attr name="visibility"/>
         <attr name="style"/>
     </declare-styleable>
+    
+    <declare-styleable name="FlexButtonV2">
+        <attr name="text"/>
+        <attr name="button_image"/>
+    </declare-styleable>
 
     <declare-styleable name="cancel_button">
         <attr name="text"/>
     </declare-styleable>
 
-    <declare-styleable name="section_divider">
-        <attr name="text"/>
+    <declare-styleable name="SectionDivider">
+        <attr name="heading_text"/>
+        <attr name="subheading_text"/>
+        <attr name="divider_visible" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="TextInput">
@@ -52,7 +61,7 @@
 
     <declare-styleable name="ListItem">
         <attr name="heading_text"/>
-        <attr name="subheading_text" format="string"/>
+        <attr name="subheading_text"/>
         <attr name="image_visibility" format="string"/>
         <attr name="button_visibility" format="string"/>
         <attr name="button_text" format="string"/>

@@ -28,20 +28,18 @@ public class FlexButton extends LinearLayout
     private void init()
     {
         textView = findViewById(R.id.textView);
-
     }
+
     public void setText(CharSequence text)
     {
         textView.setText(text);
     }
-//    public void setButtonVisibility(int visId)
-//    {
-//        setVisibility(visId);
-//    }
+
     private void setButtonStyle(Context context,String style)
     {
         LayoutInflater.from(context).inflate(resolveStyledLayoutResource(style), this, true);
     }
+
     private int resolveStyledLayoutResource(String style)
     {
         switch (style)
@@ -50,6 +48,5 @@ public class FlexButton extends LinearLayout
             case "back_button":return R.layout.button_back;
             default: return R.layout.button_ok;
         }
-
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="80dp"
+    android:background="@drawable/button_ok"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="3dp"
+        android:id="@+id/image_layout"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/image_view"
+            android:contentDescription="@string/contentDescription"
+            android:src="@drawable/left_arrow"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/textView"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="3dp"
+        android:textStyle="bold"/>
+
+</LinearLayout>
