@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_input_background"
+        android:orientation="horizontal">
+
+        <AutoCompleteTextView
+            android:id="@+id/searchable_input"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:completionThreshold="1"
+            android:minWidth="200dp"
+            android:padding="10dp"
+            android:textSize="16sp"
+            tools:ignore="LabelFor" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/contentDescription"
+            android:src="@drawable/ic_search" />
+
+    </LinearLayout>
+
+</LinearLayout>

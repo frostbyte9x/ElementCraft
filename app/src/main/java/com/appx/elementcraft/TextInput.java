@@ -14,7 +14,6 @@ import com.appx.elementcraft.databinding.TextInputBinding;
 
 public class TextInput extends LinearLayout
 {
-    private TextInputBinding binding;
     private EditText textInput;
     private TextView heading;
 
@@ -39,7 +38,7 @@ public class TextInput extends LinearLayout
 
     private void init(Context context)
     {
-        binding = TextInputBinding.inflate(LayoutInflater.from(context),this,true);
+        TextInputBinding binding = TextInputBinding.inflate(LayoutInflater.from(context),this,true);
         textInput = binding.editText;
         heading = binding.textView;
     }
@@ -61,7 +60,7 @@ public class TextInput extends LinearLayout
 
     public String getText()
     {
-        return textInput.getText().toString();
+        return textInput.getText().toString().trim();
     }
 
     public void configure(String heading,String text,String hint)

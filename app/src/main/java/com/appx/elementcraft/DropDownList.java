@@ -90,7 +90,7 @@ public class DropDownList extends LinearLayout {
                 binding=(DropDownListItemBinding)convertView.getTag();
 
             TextView textView = binding.textView;
-            ImageView image = binding.image;
+            ImageView image = binding.imageView;
             FrameLayout frameLayout = binding.frameLayout;
             DropDownItems item = getItem(position);
 
