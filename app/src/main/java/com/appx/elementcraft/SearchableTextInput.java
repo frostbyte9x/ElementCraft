@@ -2,25 +2,18 @@ package com.appx.elementcraft;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.appx.elementcraft.databinding.DropDownListItemBinding;
@@ -32,8 +25,7 @@ import androidx.annotation.Nullable;
 public class SearchableTextInput extends LinearLayout {
     private AutoCompleteTextView textInput;
     private TextView heading;
-    private PopupWindow popupWindow;
-    private SearchableTextAdapter adapter;
+    private OnItemClickListener listener;
 
     public SearchableTextInput(@NonNull Context context) {
         super(context);
@@ -57,6 +49,12 @@ public class SearchableTextInput extends LinearLayout {
         textInput = binding.searchableInput;
         heading = binding.heading;
         textInput.setDropDownBackgroundResource(R.drawable.popup_bg);
+
+        textInput.setOnItemClickListener((parent, view, position, id) -> {
+            SearchableList selectedItem = (SearchableList) parent.getItemAtPosition(position);
+            listener.onItemSelected(position, selectedItem);
+            textInput.setText(null);
+        });
     }
 
     public void specifySuggestions(Context context, List<SearchableList> dataList) {
@@ -200,6 +198,16 @@ public class SearchableTextInput extends LinearLayout {
                 title.setText(item.getItemName());
             }
         }
+    }
+
+    public interface OnItemClickListener
+    {
+        void onItemSelected(int position, SearchableList selectedItem);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        this.listener = listener;
     }
 }
 
