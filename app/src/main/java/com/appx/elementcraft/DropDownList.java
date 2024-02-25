@@ -61,7 +61,7 @@ public class DropDownList extends LinearLayout {
         return spinner.getSelectedItemPosition();
     }
 
-    private class DropDownAdapter extends ArrayAdapter<DropDownItems> {
+    private class DropDownAdapter extends ArrayAdapter<DropDownList.DropDownItems> {
         private DropDownAdapter(Context context) {
             super(context, 0, items);
         }
@@ -103,5 +103,42 @@ public class DropDownList extends LinearLayout {
                 image.setImageResource(item.getImageId());
             return convertView;
         }
+    }
+
+    public static class DropDownItems
+    {
+        private String text;
+        private int imageId;
+        private int id;
+        private static final int NULL_INT = -99;
+
+        public DropDownItems(@NonNull int id, String text)
+        {
+            this.text =text;
+            this.id=id;
+            this.imageId = NULL_INT;
+        }
+
+        public DropDownItems(@NonNull int id, int imageId,String text)
+        {
+            this.text = text;
+            this.id=id;
+            this.imageId=imageId;
+        }
+
+        public String getText()
+        {
+            return text;
+        }
+
+        public int getImageId()
+        {
+            return imageId;
+        }
+
+        public int getId() {
+            return id;
+        }
+
     }
 }

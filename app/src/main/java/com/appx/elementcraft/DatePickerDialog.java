@@ -1,79 +1,104 @@
 package com.appx.elementcraft;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.appx.elementcraft.databinding.DatePickerDialogBinding;
+import com.appx.elementcraft.databinding.DatePickerItemBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatePickerDialog extends AlertDialog
+public class DatePickerDialog extends DialogFragment
 {
     private RecyclerView recView;
-    private DateAdapter adapter;
-    private List<String> dateList;
-    public DatePickerDialog(@NonNull Context context)
+    private ImageView leftButton;
+    private ImageView rightButton;
+    private TextView monthView;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        super(context);
+        DatePickerDialogBinding binding = DatePickerDialogBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        recView = binding.recView;
+        leftButton = binding.leftButton;
+        rightButton = binding.rightButton;
+        monthView = binding.monthView;
+
+
+
+
+        return view;
     }
 
-    private void init(Context context)
+    private static class DataItems
     {
-        dateList = new ArrayList<>();
-        adapter = new DateAdapter(dateList);
-
-//        binding = DatePickerDialogBinding.inflate(LayoutInflater.from(context));
-//        setView(binding.getRoot());
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View dialogView = inflater.inflate(R.layout.date_picker_dialog,null);
-        setView(dialogView);
-
-        //recView = dialogView.findViewById(R.id.recView);
-        recView.setAdapter(adapter);
-        recView.setLayoutManager(new GridLayoutManager(context,7,GridLayoutManager.HORIZONTAL,false));
-    }
-
-    private class DateAdapter extends RecyclerView.Adapter<DateViewHolder>
-    {
-        private List<String> dateList;
-
-        DateAdapter(List<String> dateList)
+        private String date;
+        private int dateType;
+        public DataItems(String date, int dateType)
         {
-            this.dateList = dateList;
+            this.date = date;
+            this.dateType = dateType;
+        }
+
+        public String getDate()
+        {
+            return date;
+        }
+
+        public int getDateType()
+        {
+            return dateType;
+        }
+    }
+
+    private static class DateViewAdapter extends RecyclerView.Adapter<DateViewAdapter.ViewHolder>
+    {
+        public DateViewAdapter()
+        {
+            
         }
 
         @NonNull
         @Override
-        public DateViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return null;
         }
 
         @Override
-        public void onBindViewHolder(@NonNull DateViewHolder holder, int position) {
-            holder.bind(dateList.get(position));
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         }
 
         @Override
         public int getItemCount() {
-            return dateList.size();
-        }
-    }
-
-    private static class DateViewHolder extends RecyclerView.ViewHolder
-    {
-        DateViewHolder(@NonNull View itemView)
-        {
-            super(itemView);
+            return 0;
         }
 
-        void bind(String item)
+        private static class ViewHolder extends RecyclerView.ViewHolder
         {
+            private ImageView selectionIndicator;
+            private TextView dateView;
 
+            public ViewHolder(DatePickerItemBinding binding)
+            {
+                super(binding.getRoot());
+            }
+
+            public void bind()
+            {
+
+            }
         }
     }
 }
